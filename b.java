@@ -19,7 +19,7 @@ public class Person {
 			hisallperson.add(name);
 		}
 	}
-
+//haha
 	public void addnewfriend(Person one) {  //增加本人的新朋友
 		this.friendofmyname.add(one);
 	}
