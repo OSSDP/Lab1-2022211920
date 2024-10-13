@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+<meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+	<div id="container" style="height: 100%">
+	</div>
+	<script type="text/javascript"
+		src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+	<script type="text/javascript">
+		var dom = document.getElementById('container');
+		var myChart = echarts.init(dom, 'dark', {
+			renderer : 'canvas',
+			useDirtyRect : false
+		});
+		var app = {};
+		var option;
+		option = {
+			title : {
+				text : 'DHEE--基于spark用户行为分析'
+			},
+			tooltip : {
+				trigger : 'axis'
+			},
+			legend : {
+				data : [ "青岛啤酒1", "同仁堂1", "厄瓜多尔白虾1", "五粮液1", "黄金叶" ]
+			},
+			grid : {
+				left : '3%',
+				right : '4%',
+				bottom : '3%',
+				containLabel : false
+			},
+			toolbox : {
+				feature : {
+					saveAsImage : {}
+				}
+			},
+			xAxis : {
+				type : 'category',
+				boundaryGap : false,
+				data : [ '2024年2月5日', '2024年2月6日', '2024年2月7日', '2024年2月8日',
+						'2024年2月9日', '2024年2月10日', '2024年2月11日' ]
+			},
+			yAxis : {
+				type : 'value'
+			},
+			series : [ {
+				name : '青岛啤酒',
+				type : 'line',
+				stack : 'Total',
+				data : [48, 49, 53, 41, 34, 34, 39, 36, 46 ]
+			}, {
+				name : '同仁堂',
+				type : 'line',
+				stack : 'Total',
+				data : [ 37, 32, 43, 41, 35, 30, 39, 28, 32 ]
+			}, {
+				name : '厄瓜多尔白虾',
+				type : 'line',
+				stack : 'Total',
+				data : [ 35, 39, 32, 24, 28, 34, 41, 41, 52 ]
+			}, {
+				name : '五粮液',
+				type : 'line',
+				stack : 'Total',
+				data : [ 25, 29, 22, 14, 18, 24, 31, 31, 42 ]
+			}, {
+				name : '黄金叶',
+				type : 'line',
+				stack : 'Total',
+				data : [ 24, 28, 21, 13, 17, 23, 30, 30, 41 ]
+			} ]
+		};
+		if (option && typeof option === 'object') {
+			myChart.setOption(option);
+		}
+		window.addEventListener('resize', myChart.resize);
+	</script>
+</body>
+</html>
